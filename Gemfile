@@ -58,7 +58,7 @@ gem 'tinymce-rails'
 gem 'mirador_rails'
 gem 'github-linguist'
 gem 'blacklight', ' ~> 6.2'
-gem 'blacklight-spotlight', path: '/home/blacklight/spotlight'
+gem 'blacklight-spotlight', git: 'https://github.com/TAMULib/spotlight.git', branch: 'tamu-spotlight'
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
 end

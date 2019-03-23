@@ -1,5 +1,7 @@
-PATH
-  remote: /home/blacklight/spotlight
+GIT
+  remote: https://github.com/TAMULib/spotlight.git
+  revision: 57aacc935609143de12b4ea16530f10136e44689
+  branch: tamu-spotlight
   specs:
     blacklight-spotlight (1.4.1)
       acts-as-taggable-on (~> 5.0)
@@ -29,7 +31,7 @@ PATH
       oauth2
       openseadragon
       paper_trail (~> 7.0)
-      rails (~> 5.1.6)
+      rails (~> 5.0)
       riiif (~> 1.0)
       roar (~> 1.1)
       roar-rails
