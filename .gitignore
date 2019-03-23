@@ -21,3 +21,8 @@
 /yarn-error.log
 
 .byebug_history
+
+# Ignore templated files
+config/database.yml
+config/secrets.myl
+config/environments/production.rb
