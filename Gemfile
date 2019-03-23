@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.1.6', '>= 5.1.6.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -26,7 +26,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
+# gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -57,13 +57,15 @@ gem 'pg'
 gem 'tinymce-rails'
 gem 'mirador_rails'
 gem 'github-linguist'
-gem 'blacklight', ' ~> 6.0'
-gem 'blacklight-spotlight', path: '/home/spotlight/spotlight'
+gem 'blacklight', ' ~> 6.2'
+gem 'blacklight-spotlight', path: '/home/blacklight/spotlight'
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
 end
 
 gem 'rsolr', '>= 1.0'
+gem 'bootstrap-sass', '~> 3.0'
+gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 gem 'jquery-rails'
 gem 'devise'
 gem 'devise-guests', '~> 0.6'

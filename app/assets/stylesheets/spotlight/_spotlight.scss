@@ -67,3 +67,47 @@ body {
 .thumbnail {
     border: none !important;
 }
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus,
+:focus {
+    box-shadow: none !important;
+    outline: -webkit-focus-ring-color auto 6px !important;
+}
+
+.pagination-search-widgets .search-widgets {
+    display: none;
+}
+  
+.sidenav > li.active > a,
+.sidenav > li.active > h4,
+.sidenav > li > ol.subsection > li.active {
+    color: #500000;
+    font-weight: bold;
+}
+
+.breadcrumb>.active {
+    color: #585858;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #585858;
+}
+
+.dl-invert dt {
+    color: #585858;
+}

@@ -2,25 +2,11 @@
     width: 100%;
     margin-top: 25px;
 
-    .footer-upper {
-        text-align: center;
-        background-color: $footer-upper-background-color;
-        border-top: 1px solid $footer-upper-color;
-
-        * {
-            color: $black;
-        }
-
-        .footer-logo-container {
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-    }
-
     .footer-lower {
         text-align: center;
         min-height: $footer-lower-height;
         background: $footer-lower-background-color;
+        border-top: 1px solid $footer-lower-border-color;
 
         * {
             color: $footer-lower-color;
