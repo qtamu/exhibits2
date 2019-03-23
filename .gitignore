@@ -24,5 +24,8 @@
 
 # Ignore templated files
 config/database.yml
-config/secrets.myl
+config/secrets.yml
 config/environments/production.rb
+
+/public/assets/
+/public/uploads/
