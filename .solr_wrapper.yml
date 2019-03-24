@@ -2,5 +2,5 @@
 port: 8983
 version: 6.4.1
 collection:
-  dir: solr/config/
+  dir: solr/conf/
   name: spotlight-core
