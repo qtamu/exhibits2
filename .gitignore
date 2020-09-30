@@ -22,9 +22,5 @@
 
 .byebug_history
 
-# Ignore templated files
-config/database.yml
-config/environments/production.rb
-
 /public/assets/
 /public/uploads/
