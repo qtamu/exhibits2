@@ -43,12 +43,12 @@ Rails.application.configure do
   # config.force_ssl = true
 
   config.action_controller.default_url_options = {
-      :protocol => ENV['DEFAULT_URL_PROTOCOL'] || 'http'
+      :protocol => ENV.fetch('DEFAULT_URL_PROTOCOL', 'http')
   }
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
-  config.log_level = ENV['LOG_LEVEL'] || :info
+  config.log_level = :info
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
@@ -69,16 +69,16 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      :address => ENV['EMAIL_SMTP_HOST'] || 'localhost',
-      :port => ENV['EMAIL_SMTP_PORT'] || 25,
-      :enable_starttls_auto => ENV['EMAIL_SMTP_ENABLE_STARTTLS_AUTO'] || false,
-      :openssl_verify_mode => ENV['EMAIL_SMTP_OPENSSL_VERIFY_MODE'] || 'none'
+      :address => ENV.fetch('EMAIL_SMTP_HOST', 'localhost'),
+      :port => ENV.fetch('EMAIL_SMTP_PORT', 25),
+      :enable_starttls_auto => ENV.fetch('EMAIL_SMTP_ENABLE_STARTTLS_AUTO', false),
+      :openssl_verify_mode => ENV.fetch('EMAIL_SMTP_OPENSSL_VERIFY_MODE', 'none')
   }
   config.action_mailer.default_url_options = {
-      :host => ENV['ACTION_MAILER_URL'] || 'localhost'
+      :host => ENV.fetch('ACTION_MAILER_URL', 'localhost')
   }
   config.action_mailer.default_options = {
-      :from => ENV['ACTION_MAILER_FORM'] || 'noreply@spotlight.edu'
+      :from => ENV.fetch('ACTION_MAILER_FORM', 'noreply@spotlight.edu')
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
@@ -106,5 +106,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Mirador location for spotlight iiif maifest drag and drop
-  config.iiif_info_url = "#{ENV['IIIF_MIRADOR_URL'] || 'http://localhost'}?%{query}"
+  config.iiif_info_url = "#{ENV.fetch('IIIF_MIRADOR_URL', 'http://localhost')}?%{query}"
 end
