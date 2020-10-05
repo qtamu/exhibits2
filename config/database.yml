@@ -1,0 +1,22 @@
+development:
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
+  database: db/development.sqlite3
+
+test:
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
+  database: db/test.sqlite3
+
+production:
+  adapter:  <%= ENV['DATABASE_ADAPTER'] || "postgresql" %>
+  encoding: <%= ENV['DATABASE_ENCODING'] || "unicode" %>
+  database: <%= ENV['DATABASE_NAME'] || "spotlight" %>
+  pool:     <%= ENV['DATABASE_POOL'] || 5 %>
+  username: <%= ENV['DATABASE_USERNAME'] || "spotlight" %>
+  password: <%= ENV['DATABASE_PASSWORD'] || "spotlight" %>
+  host:     <%= ENV['DATABASE_HOST'] || "localhost" %>
+  port:     <%= ENV['DATABASE_PORT'] || 5432 %>
+  ssl:      <%= ENV['DATABASE_SSL'] || "disable" %>
