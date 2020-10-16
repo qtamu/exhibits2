@@ -9,6 +9,15 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+
+  config.ldap_logger = true ## Enable logging LDAP Query
+  config.ldap_create_user = true  ## All valid AD users can log in and automatically create user records.
+  config.ldap_update_password = false  ## Make sure that password change is not written back to AD.
+  config.ldap_use_admin_to_bind = true  ## Use Administrator in bind at the time of LDAP authentication.
+  config.authentication_keys = [:email]  ## Key used for authentication.
+  config.case_insensitive_keys = [:email]  ## Does not distinguish case of key
+  config.strip_whitespace_keys = [:email]  ## Delete the blanks contained in the key
+
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
@@ -58,12 +67,12 @@ Devise.setup do |config|
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
-  config.case_insensitive_keys = [:email]
+  # config.case_insensitive_keys = [:email]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
   # modifying a user and when used to authenticate or find a user. Default is :email.
-  config.strip_whitespace_keys = [:email]
+  # config.strip_whitespace_keys = [:email]
 
   # Tell if authentication through request.params is enabled. True by default.
   # It can be set to an array that will enable params authentication only for the
