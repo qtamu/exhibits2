@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
   include Blacklight::Controller
   include Spotlight::Controller
 
-  layout 'blacklight'
+  layout :determine_layout if respond_to? :layout
 
-  # protect_from_forgery with: :null_session
+  add_breadcrumb "Digital Collections", Rails.application.config.collections_url
+
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # ==> User model
 # Note that your chosen model must include Spotlight::User mixin
 # Spotlight::Engine.config.user_class = '::User'
@@ -37,11 +39,21 @@
 
 # ==> Uploaded item configuration
 # Spotlight::Engine.config.upload_fields = [
-#   OpenStruct.new(field_name: :spotlight_upload_description_tesim, label: 'Description', form_field_type: :text_area),
-#   OpenStruct.new(field_name: :spotlight_upload_attribution_tesim, label: 'Attribution'),
-#   OpenStruct.new(field_name: :spotlight_upload_date_tesim, label: 'Date')
+#   UploadFieldConfig.new(
+#     field_name: config.upload_description_field,
+#     label: -> { I18n.t(:"spotlight.search.fields.#{config.upload_description_field}") },
+#     form_field_type: :text_area
+#   ),
+#   UploadFieldConfig.new(
+#     field_name: :spotlight_upload_attribution_tesim,
+#     label: -> { I18n.t(:'spotlight.search.fields.spotlight_upload_attribution_tesim') }
+#   ),
+#   UploadFieldConfig.new(
+#     field_name: :spotlight_upload_date_tesim,
+#     label: -> { I18n.t(:'spotlight.search.fields.spotlight_upload_date_tesim') }
+#   )
 # ]
-# Spotlight::Engine.config.upload_title_field = nil # OpenStruct.new(...)
+# Spotlight::Engine.config.upload_title_field = nil # UploadFieldConfig.new(...)
 # Spotlight::Engine.config.uploader_storage = :file
 # Spotlight::Engine.config.allowed_upload_extensions = %w(jpg jpeg png)
 
@@ -49,16 +61,24 @@
 # Spotlight::Engine.config.featured_image_square_size = [400, 400]
 
 # ==> Google Analytics integration
-# Spotlight::Engine.config.analytics_provider = nil
+# Spotlight::Engine.config.analytics_provider = Spotlight::Analytics::Ga
 # Spotlight::Engine.config.ga_pkcs12_key_path = nil
 # Spotlight::Engine.config.ga_web_property_id = nil
 # Spotlight::Engine.config.ga_email = nil
 # Spotlight::Engine.config.ga_analytics_options = {}
 # Spotlight::Engine.config.ga_page_analytics_options = config.ga_analytics_options.merge(limit: 5)
+# Spotlight::Engine.config.ga_anonymize_ip = false # false for backwards compatibility
 
 # ==> Sir Trevor Widget Configuration
+# These are set by default by Spotlight's configuration,
+# but you can customize them here, or in the SirTrevorRails::Block#custom_block_types method
 # Spotlight::Engine.config.sir_trevor_widgets = %w(
-#   Heading Text List Quote Iframe Video Oembed Rule UploadedItems Browse
+#   Heading Wysiwyg Text List Quote Iframe Video Oembed Rule UploadedItems Browse
 #   FeaturedPages SolrDocuments SolrDocumentsCarousel SolrDocumentsEmbed
 #   SolrDocumentsFeatures SolrDocumentsGrid SearchResults
 # )
+#
+# Page configurations made available to widgets
+# Spotlight::Engine.config.page_configurations = {
+#   'my-local-config': ->(context) { context.my_custom_data_path(context.current_exhibit) }
+# }
