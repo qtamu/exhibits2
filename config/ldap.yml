@@ -5,7 +5,7 @@ default: &default
   base: <%= ENV['LDAP_BASE'] || "OU=UserAccounts,DC=library,DC=tamu,DC=edu" %>
   admin_user: <%= ENV['LDAP_ADMIN_USER'] || "CN=libraryweb,OU=ServiceAccounts,DC=library,DC=tamu,DC=edu" %>
   admin_password: <%= ENV['LDAP_ADMIN_PASSWORD'] || "xyzzy" %>
-  ssl: <%= ENV['LDAB_SSL'] || true %>
+  ssl: <%= ENV['LDAP_SSL'] || true %>
 
 development:
   <<: *default
