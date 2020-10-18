@@ -1,10 +1,13 @@
-import Mirador from 'mirador/dist/mirador.min';
+import Mirador from 'tamu-mirador';
 
 const urlParams = new URLSearchParams(window.location.search);
-const manifestId = urlParams.get('manifest')
 
 const config = {
   id: 'mirador',
+  language: 'en',
+  availableLanguages: {
+    en: 'English',
+  },
   theme: {
     palette: {
       primary: {
@@ -13,8 +16,19 @@ const config = {
     },
     transitions: {}
   },
+  workspace: {
+    showZoomControls: true,
+    type: 'mosaic',
+  },
+  workspaceControlPanel: {
+    enabled: true
+  },
   windows: [{
-    manifestId
+    manifestId: urlParams.get('manifest'),
+    defaultSideBarPanel: 'info',
+    allowClose: false,
+    allowMaximize: true,
+    sideBarOpenByDefault: false
   }],
   catalog: []
 };
