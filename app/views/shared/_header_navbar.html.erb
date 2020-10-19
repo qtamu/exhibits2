@@ -1,35 +1,24 @@
-<header>
-  <div id="header-navbar" class="navbar navbar-default navbar-static-top tamu-header-nav-bar" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <a href="http://library.tamu.edu">
-          <span class="navbar-brand tamu-header-brand hidden-xs">
-            <%= image_tag "tamu/tamu-logo-with-bar.png", alt: "Texas A&M University Libraries Logo" %>
-            <span class="navbar-title">Texas A&M University Libraries</span> 
-          </span>
-          <span class="navbar-brand tamu-header-brand visible-xs">
-            <%= image_tag "tamu/tamu-logo.png", alt: "Texas A&M University Libraries Responsive Logo" %>
-          </span>
-        </a>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#user-util-collapse">
-          <span class="sr-only"><%= t :toggle_nav %></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse" id="user-util-collapse">
+<div class="tamu-navbar">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark" role="navigation" aria-label="<%= t('spotlight.topbar.label') %>">
+    <div class="<%= container_classes %>">
+
+      <a href="http://library.tamu.edu" class="navbar-brand">
+        <span class="d-none d-md-block">
+          <%= image_tag "tamu/tamu-logo-with-bar.png", alt: "Texas A&M University Libraries Logo" %>
+          <span class="navbar-link">Texas A&M University Libraries</span> 
+        </span>
+        <span class="d-block d-md-none">
+          <%= image_tag "tamu/tamu-logo.png", alt: "Texas A&M University Libraries Responsive Logo" %>
+        </span>
+      </a>
+
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#user-util-collapse" aria-controls="user-util-collapse" aria-expanded="false" aria-label="<%= t :toggle_nav %>">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-md-end" id="user-util-collapse">
         <%= render :partial=>'tamu/user_menu' %>
       </div>
     </div>
-  </div>
-
-  <!-- <div class="navbar-default tamu-header-title-bar" role="title">
-    <div class="container">
-      <div class="navbar-header tamu-header-title">
-        <%= link_to "Digital Collections", main_app.root_path %>
-      </div>
-    </div>
-  </div> -->
-
-</header>
+  </nav>
+</div>

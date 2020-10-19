@@ -36,6 +36,7 @@ SirTrevor.Blocks.Wysiwyg = (function() {
         inline: false,
         inline_styles: true,
         menubar: false,
+        theme: 'silver',
         plugins: [
           'advlist autolink lists link charmap print preview hr anchor pagebreak',
           'searchreplace wordcount visualblocks visualchars code',
