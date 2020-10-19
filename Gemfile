@@ -51,6 +51,8 @@ gem 'tzinfo-data'
 
 gem 'pg'
 
+gem 'devise_ldap_authenticatable'
+
 gem 'tinymce-rails'
 gem 'mirador_rails'
 
