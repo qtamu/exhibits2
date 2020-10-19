@@ -2,9 +2,7 @@
 
 <% if manifest %>
   <iframe
-    src="<%= mirador_index_path(
-      manifest: manifest
-    ) %>"
+    src="<%= mirador_viewer_path(manifest) %>"
     allowfullscreen="true"
     style="height: 70vh"
     frameborder="0"

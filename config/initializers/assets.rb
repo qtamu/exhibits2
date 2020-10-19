@@ -14,4 +14,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
 Rails.application.config.tinymce.install = :compile
-Rails.application.config.assets.precompile += %w( *.svg *.png *.ico tinymce-jquery.js mirador_bundle.js mirador_bundle.css )
+Rails.application.config.assets.precompile += %w( *.svg *.png *.ico tinymce-jquery.js )

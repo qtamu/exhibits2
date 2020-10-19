@@ -28,6 +28,5 @@ Rails.application.routes.draw do
 
   resources :mirador, only: [:index]
 
-  mount MiradorRails::Engine, at: MiradorRails::Engine.locales_mount_path
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
