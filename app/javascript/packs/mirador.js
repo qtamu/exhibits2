@@ -1,4 +1,4 @@
-import Mirador from 'tamu-mirador';
+import Mirador from 'mirador';
 
 const urlParams = new URLSearchParams(window.location.search);
 
