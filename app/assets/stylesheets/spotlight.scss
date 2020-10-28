@@ -1,9 +1,99 @@
 /*
 *= require bootstrap-tagsinput
 */
-@import 'spotlight/variables_bootstrap';
-@import 'bootstrap-sprockets';
-@import 'bootstrap';
-@import 'sir-trevor/main';
-@import 'leaflet';
-@import 'spotlight/spotlight';
+
+$primary: #3c0000;
+
+@import "spotlight/variables_bootstrap";
+@import "bootstrap";
+@import "sir-trevor/main";
+@import "leaflet";
+@import "spotlight/spotlight";
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.bg-dark {
+  background: $primary !important;
+}
+
+.tamu-navbar {
+  .navbar {
+    padding: 0;
+    min-height: 50px;
+    .navbar-brand,
+    .navbar-collapse {
+      padding: 0;
+      height: 50px;
+      line-height: 50px;
+    }
+    .navbar-toggle {
+      /* (50px - button height 34px) / 2 = 8px */
+      margin-top: 8px;
+      padding: 9px 10px !important;
+    }
+    @media (min-width: 768px) {
+      .navbar-nav > li > a {
+        /* (50px - line-height of 27px) / 2 = 11.5px */
+        padding-top: 11.5px;
+        padding-bottom: 11.5px;
+        line-height: 27px;
+      }
+    }
+  }
+  .navbar-dark .navbar-nav,
+  .image-masthead .exhibit-navbar .navbar-nav {
+    .nav-link {
+      color: white;
+    }
+    .nav-link:hover {
+      color: black;
+      background-color: #ffc222;
+    }
+  }
+}
+
+.masthead {
+  background-color: #f5f5f5;
+}
+
+.site-footer {
+  width: 100%;
+  height: auto;
+  margin-top: 25px;
+  padding: 0px;
+  background: $primary;
+
+  .footer-lower {
+    text-align: center;
+    border-top: 1px solid #8d8d8d;
+
+    * {
+      color: #ededed;
+    }
+
+    .list-inline {
+      padding-top: 20px;
+      padding-bottom: 5px;
+    }
+
+    .footer-info-address {
+      .copyright {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.st-block [contenteditable="true"] {
+  color: #42474b;
+  border: 0.1em solid #d4d4d4;
+}
+
+.iiif-logo {
+  margin-left: 10px;
+  img {
+    vertical-align: baseline;
+  }
+}

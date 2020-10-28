@@ -1,14 +1,29 @@
 # frozen_string_literal: true
 
+# Assuming you have not yet modified this file, each configuration option below
+# is set to its default value. Note that some are commented out while others
+# are not: uncommented lines are intended to protect your configuration from
+# breaking changes in upgrades (i.e., in the event that future versions of
+# Devise change the default values for those options).
+#
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+
+  config.ldap_logger = true ## Enable logging LDAP Query
+  config.ldap_create_user = true  ## All valid AD users can log in and automatically create user records.
+  config.ldap_update_password = false  ## Make sure that password change is not written back to AD.
+  config.ldap_use_admin_to_bind = true  ## Use Administrator in bind at the time of LDAP authentication.
+  config.authentication_keys = [:email]  ## Key used for authentication.
+  config.case_insensitive_keys = [:email]  ## Does not distinguish case of key
+  config.strip_whitespace_keys = [:email]  ## Delete the blanks contained in the key
+
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'cb3bcebbc166e07185f0f44ba187a9f2ecb2522c58020221cf58c292f25e2f4c182620e3f225ed712aae3787fd308ee16e0227f71a3816fb91348452c0dcc85d'
+  # config.secret_key = '0fdb5f8fb8a652c6c25d1dbae3455e209b3ace6cc04053f0f8b39c6d6f790a94d3b897d05e756518c7f7eadac7c7f35290139dbecdd814e54b043e1eab74b8c2'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -52,12 +67,12 @@ Devise.setup do |config|
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
-  config.case_insensitive_keys = [:email]
+  # config.case_insensitive_keys = [:email]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
   # modifying a user and when used to authenticate or find a user. Default is :email.
-  config.strip_whitespace_keys = [:email]
+  # config.strip_whitespace_keys = [:email]
 
   # Tell if authentication through request.params is enabled. True by default.
   # It can be set to an array that will enable params authentication only for the
@@ -68,7 +83,10 @@ Devise.setup do |config|
   # Tell if authentication through HTTP Auth is enabled. False by default.
   # It can be set to an array that will enable http authentication only for the
   # given strategies, for example, `config.http_authenticatable = [:database]` will
-  # enable it only for database authentication. The supported strategies are:
+  # enable it only for database authentication.
+  # For API-only applications to support authentication "out-of-the-box", you will likely want to
+  # enable this with :database unless you are using a custom strategy.
+  # The supported strategies are:
   # :database      = Support basic authentication with authentication key + password
   # config.http_authenticatable = false
 
@@ -103,18 +121,21 @@ Devise.setup do |config|
   # config.reload_routes = true
 
   # ==> Configuration for :database_authenticatable
-  # For bcrypt, this is the cost for hashing the password and defaults to 11. If
+  # For bcrypt, this is the cost for hashing the password and defaults to 12. If
   # using other algorithms, it sets how many times you want the password to be hashed.
+  # The number of stretches used for generating the hashed password are stored
+  # with the hashed password. This allows you to change the stretches without
+  # invalidating existing passwords.
   #
   # Limiting the stretches to just one in testing will increase the performance of
   # your test suite dramatically. However, it is STRONGLY RECOMMENDED to not use
   # a value less than 10 in other environments. Note that, for bcrypt (the default
   # algorithm), the cost increases exponentially with the number of stretches (e.g.
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
-  config.stretches = Rails.env.test? ? 1 : 11
+  config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'ab1c5e631e9386a7e524dbebf708e91b88252cfdd801e02ca268695cd658e3fe144affae74ad8e86dbe64e5554e60fb18694d6da6d5d25c8d4ef8c8cdee116a5'
+  # config.pepper = '8f622ec10e29dba944083b7492d06ae2e9637ee293f3fd40a97215b1c6d1f6c9d48b4ef4b7b9f00f04a5123d0b8793e420001de0c0038b26df94bad51ca51d6a'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -123,8 +144,8 @@ Devise.setup do |config|
   # config.send_password_change_notification = false
 
   # ==> Configuration for :invitable
-  # The period the generated invitation token is valid, after
-  # this period, the invited resource won't be able to accept the invitation.
+  # The period the generated invitation token is valid.
+  # After this period, the invited resource won't be able to accept the invitation.
   # When invite_for is 0 (the default), the invitation won't expire.
   # config.invite_for = 2.weeks
 
@@ -140,10 +161,11 @@ Devise.setup do |config|
 
   # The key to be used to check existing users when sending an invitation
   # and the regexp used to test it when validate_on_invite is not set.
-  # config.invite_key = {:email => /\A[^@]+@[^@]+\z/}
-  # config.invite_key = {:email => /\A[^@]+@[^@]+\z/, :username => nil}
+  # config.invite_key = { email: /\A[^@]+@[^@]+\z/ }
+  # config.invite_key = { email: /\A[^@]+@[^@]+\z/, username: nil }
 
-  # Flag that force a record to be valid before being actually invited
+  # Ensure that invited record is valid.
+  # The invitation won't be sent if this check fails.
   # Default: false
   # config.validate_on_invite = true
 

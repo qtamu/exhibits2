@@ -5,13 +5,12 @@ Rails.application.routes.draw do
   root to: 'spotlight/exhibits#index'
   mount Spotlight::Engine, at: 'spotlight'
   mount Blacklight::Engine => '/'
-  #  root to: "catalog#index" # replaced by spotlight root path
+#  root to: "catalog#index" # replaced by spotlight root path
   concern :searchable, Blacklight::Routes::Searchable.new
 
   resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
     concerns :searchable
   end
-
   devise_for :users
   concern :exportable, Blacklight::Routes::Exportable.new
 
@@ -29,7 +28,5 @@ Rails.application.routes.draw do
 
   resources :mirador, only: [:index]
 
-  mount MiradorRails::Engine, at: MiradorRails::Engine.locales_mount_path
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
