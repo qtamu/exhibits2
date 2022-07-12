@@ -17,3 +17,16 @@
  *= require spotlight
  *= require_self
  */
+
+a {
+    color: #00648b;
+    text-decoration: none;
+    border-bottom: 1px dotted #00648b;
+  }
+
+
+a:hover {
+    color: #003f58;
+    text-decoration: none;
+    border-bottom: 1px solid #003f58;
+  }
