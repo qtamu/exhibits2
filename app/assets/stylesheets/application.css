@@ -30,3 +30,8 @@ a:hover {
     text-decoration: none;
     border-bottom: 1px solid #003f58;
   }
+
+exhibit-card .card-title .stretched-link {
+    outline: none;
+    border-bottom: none;
+}
