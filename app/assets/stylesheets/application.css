@@ -37,13 +37,10 @@
 }
 
 
-.exhibit-card a{
+.exhibit-card a, .exhibit-card a:hover {
     border-bottom: none;
 }
 
-.exhibit-card a:hover{
-    border-bottom: none;
-}
 
 .site-footer .footer-lower a{
    
@@ -56,11 +53,13 @@
     border-bottom: 1px dotted #ffc222;
 }
 
+
 #published .nav-pills .nav-link {
         border-bottom: none;
 }
 
+
 .nav-item a, .nav-item a:hover {
-border-bottom: none;
+    border-bottom: none;
 
 }
