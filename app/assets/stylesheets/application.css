@@ -60,3 +60,7 @@ a:hover {
         border-bottom: none;
 }
 
+.nav-item a, .nav-item a:hover {
+border-bottom: none;
+
+}
