@@ -37,6 +37,11 @@ a:hover {
 }
 
 
+.site-footer .footer-lower a{
+   
+    border-bottom: none;
+}
+
 
 .site-footer .footer-lower a:hover{
     color:  #ffc222;
