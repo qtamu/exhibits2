@@ -37,7 +37,11 @@ a:hover {
 }
 
 
-.exhibit-card a, .exhibit-card a:hover {
+.exhibit-card a {
+    border-bottom: none;
+}
+
+.exhibit-card a:hover {
     border-bottom: none;
 }
 
