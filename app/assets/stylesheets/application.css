@@ -37,6 +37,14 @@ a:hover {
 }
 
 
+.exhibit-card a{
+    border-bottom: none;
+}
+
+.exhibit-card a:hover{
+    border-bottom: none;
+}
+
 .site-footer .footer-lower a{
    
     border-bottom: none;
