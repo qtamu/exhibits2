@@ -48,5 +48,7 @@ a:hover {
     border-bottom: 1px dotted #ffc222;
 }
 
-
+#published .nav-pills .nav-link {
+        border-bottom: none;
+}
 
