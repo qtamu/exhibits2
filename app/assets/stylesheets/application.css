@@ -35,3 +35,13 @@ a:hover {
     outline: none;
     border-bottom: none;
 }
+
+
+
+.site-footer .footer-lower a:hover{
+    color:  #ffc222;
+    border-bottom: 1px dotted #ffc222;
+}
+
+
+
