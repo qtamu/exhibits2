@@ -15,10 +15,11 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+
 a {
-    color: $linkBlue;
+    color: #00648b;
     text-decoration: none;
-    border-bottom: 1px dotted $linkBlue;
+    border-bottom: 1px dotted #00648b;
   }
 
 
@@ -27,6 +28,45 @@ a:hover {
     text-decoration: none;
     border-bottom: 1px solid #003f58;
   }
+
+.exhibit-card .card-title .stretched-link {
+    outline: none;
+    border-bottom: none;
+}
+
+
+.exhibit-card a {
+    border-bottom: none;
+}
+
+.exhibit-card a:hover {
+    border-bottom: none;
+}
+
+
+.site-footer .footer-lower a{
+   
+    border-bottom: none;
+}
+
+
+.site-footer .footer-lower a:hover{
+    color:  #ffc222;
+    border-bottom: 1px dotted #ffc222;
+}
+
+
+#published .nav-pills .nav-link {
+        border-bottom: none;
+}
+
+
+.nav-item a, .nav-item a:hover {
+    border-bottom: none;
+
+}
+
+
 
 .bg-dark {
   background: $primary !important;
