@@ -1,0 +1,6 @@
+config/boot.rb
+.gitignore
+log/*
+tmp/*
+test/*
+README.md
