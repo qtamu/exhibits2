@@ -64,7 +64,8 @@ gem 'devise_ldap_authenticatable'
 gem 'tinymce-rails'
 
 gem 'blacklight', ' ~> 7.0'
-gem 'blacklight-spotlight', github: 'projectblacklight/spotlight'
+gem 'blacklight-spotlight', github: 'projectblacklight/spotlight', branch:'main'
+# gem 'blacklight-spotlight', '~> 3.5', '>= 3.5.0.2'
 # group :development, :test do
 # end
 

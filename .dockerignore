@@ -3,4 +3,4 @@ config/boot.rb
 log/*
 tmp/*
 test/*
-README.md
+README.md 
