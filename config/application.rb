@@ -6,6 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+require_relative 'boot'
+require 'rails/all'
 module TamuSpotlight
   class Application < Rails::Application
     config.action_mailer.default_url_options = { host: "localhost:4200", from: "noreply@example.com" }
