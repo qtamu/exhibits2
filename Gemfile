@@ -66,6 +66,10 @@ gem 'blacklight-spotlight', github: 'projectblacklight/spotlight'
 # group :development, :test do
 # end
 
+group :development, :test do 
+  gem 'dotenv', '~> 2.8', '>= 2.8.1'
+end
+
 gem 'solr_wrapper', '>= 0.3'
 gem 'rsolr', '>= 1.0', '< 3'
 gem 'bootstrap', '~> 4.0'
