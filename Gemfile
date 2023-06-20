@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bootsnap', '>= 1.4.2', require: false
 # gem 'bootsnap', '~> 1.16', require: false
 
-group :development, :test do
+group :production, :development, :test do
   gem 'bootsnap', '>= 1.16', require: false
 end
 
